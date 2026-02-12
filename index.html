@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rewind Pub & Grub | Outdoor Pub • Grill • Old-School Nights</title>
+  <meta name="description" content="Outdoor pub & grill by day, chilled nostalgic old-school music by night. Book a table, view the menu, or order braai meat for pickup." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Top Announcement -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <span class="pill">Outdoor • Grill • Lounge</span>
+      <span class="topbar__text">Day vibes, night nostalgia - bring your people.</span>
+    </div>
+  </div>
+
+  <!-- Header / Nav -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="Rewind Pub & Grub Home">
+        <span class="brand__badge" aria-hidden="true">
+          <!-- cassette icon -->
+          <svg viewBox="0 0 64 40" class="cassette" role="img" aria-label="">
+            <rect x="2" y="2" width="60" height="36" rx="6"></rect>
+            <rect x="8" y="8" width="48" height="14" rx="3"></rect>
+            <circle cx="22" cy="15" r="4"></circle>
+            <circle cx="42" cy="15" r="4"></circle>
+            <rect x="10" y="26" width="44" height="6" rx="3"></rect>
+          </svg>
+          <span class="est">EST. 1998</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#menu">Menu</a>
+        <a href="#events">Events</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header__cta">
+        <button class="btn btn--soft" data-open-booking>
+          Book a Table
+        </button>
+      </div>
+
+      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobileNav" data-mobile-nav aria-hidden="true">
+      <a href="#menu">Menu</a>
+      <a href="#events">Events</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+      <button class="btn btn--primary" data-open-booking>Book a Table</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="top" class="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <div class="rating" aria-label="Google rating 4.2 out of 5 from 84 reviews">
+          <span class="rating__brand">
+            <span class="gDot" aria-hidden="true"></span>
+            Google
+          </span>
+          <span class="rating__stars" aria-hidden="true">★★★★☆</span>
+          <span class="rating__score"><strong>4.2</strong> <span class="muted">(84)</span></span>
+        </div>
+
+        <h1 class="hero__title">
+          <span class="logoScript">Rewind</span>
+          <span class="logoBlock">PUB &amp; GRUB</span>
+        </h1>
+
+        <p class="hero__headline">Eat. Drink. Rewind.</p>
+        <p class="hero__sub">
+          Outdoor grill &amp; lounge by day, chilled, nostalgic old-school music by night.
+          Good times, great vibes, no stress.
+        </p>
+
+        <div class="hero__actions">
+          <button class="btn btn--primary" data-open-booking>Book a Table</button>
+          <a class="btn btn--ghost" href="#menu">View Menu</a>
+          <a class="btn btn--ghost" id="directionsBtn" href="#" target="_blank" rel="noopener">Get Directions</a>
+        </div>
+
+        <div class="hero__secondary">
+          <div class="pickupCard">
+            <div class="pickupCard__title">Braai Pickup Orders</div>
+            <div class="pickupCard__text">
+              Call, place your order (name + meat), and collect when it’s ready.
+            </div>
+            <a class="btn btn--soft" id="callBtn" href="#">Call to Order</a>
+          </div>
+
+          <div class="eventStrip" id="events">
+            <span class="eventStrip__dot" aria-hidden="true"></span>
+            <span class="eventStrip__label">Tonight’s vibe:</span>
+            <span class="eventStrip__title">Old-School Sessions • Chill Lounge • Outdoor Tables</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__visual" aria-hidden="true">
+        <div class="vinylCard">
+          <div class="vinylCard__top">
+            <span class="vinylCard__pill">Outdoor</span>
+            <span class="vinylCard__pill">Grill</span>
+            <span class="vinylCard__pill">Nostalgia Nights</span>
+          </div>
+
+          <div class="vinylCard__mid">
+			<div class="heroThumbWrap">
+			  <img
+				class="heroThumb"
+				src="images/hero-outdoor.jpg"
+				alt="Outdoor seating at Rewind Pub & Grub"
+			  />
+			</div>
+		  </div>
+
+
+          <div class="vinylCard__bottom">
+            <div class="miniInfo">
+              <div>
+                <span class="miniLabel">Hours</span>
+                <span class="miniValue" id="hoursText">Mon–Thu 10:00–22:00 • Fri–Sun 10:00–00:00</span>
+              </div>
+              <div>
+                <span class="miniLabel">Location</span>
+                <span class="miniValue" id="locationText">Virginia, Free State</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- MENU PREVIEW -->
+  <section id="menu" class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2>Menu Highlights</h2>
+        <p>Big flavour, grilled right. Tap to view the full menu.</p>
+      </div>
+
+      <div class="grid3">
+        <article class="card">
+          <h3>Signature Grill Plates</h3>
+          <p>Chicken, steak, wors, and flame-grilled favourites served hot.</p>
+        </article>
+        <article class="card">
+          <h3>Wings &amp; Baskets</h3>
+          <p>Classic pub comfort with that Rewind twist. Perfect with a cold one.</p>
+        </article>
+        <article class="card">
+          <h3>Drinks &amp; Cocktails</h3>
+          <p>Easy sips in the sun, chilled pours at night.</p>
+        </article>
+      </div>
+
+      <div class="centerRow">
+        <a class="btn btn--primary" href="#" aria-label="Open menu PDF">Open Full Menu (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BACKEND PITCH SECTION -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <h2>Backend Features (Booking System)</h2>
+        <p>Built to reduce missed calls and keep tables moving.</p>
+      </div>
+
+      <div class="grid3">
+        <article class="card">
+          <h3>Live Table Bookings</h3>
+          <p>Customers book online. Admin confirms, reschedules, or blocks time slots.</p>
+        </article>
+        <article class="card">
+          <h3>Auto Notifications</h3>
+          <p>WhatsApp/SMS/email confirmations + reminders to cut no-shows.</p>
+        </article>
+        <article class="card">
+          <h3>Admin Dashboard</h3>
+          <p>View bookings by day, export reports, and manage peak hours.</p>
+        </article>
+      </div>
+
+      <div class="centerRow">
+        <button class="btn btn--soft" data-open-booking>Try the Booking Form</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY (placeholders) -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2>Outdoor Vibes</h2>
+        <p>String lights, grills, music, and good energy.</p>
+      </div>
+
+      <div class="gallery">
+  <figure class="galleryItem">
+    <img src="images/gallery/outdoor-1.jpg" alt="Outdoor seating at Rewind Pub & Grub" loading="lazy">
+  </figure>
+
+  <figure class="galleryItem">
+    <img src="images/gallery/outdoor-2.jpg" alt="Outdoor tables and grill area" loading="lazy">
+  </figure>
+
+  <figure class="galleryItem">
+    <img src="images/gallery/outdoor-3.jpg" alt="String lights and evening vibe" loading="lazy">
+  </figure>
+
+  <figure class="galleryItem">
+    <img src="images/gallery/outdoor-4.jpg" alt="Guests enjoying the outdoor lounge" loading="lazy">
+  </figure>
+
+  <figure class="galleryItem">
+    <img src="images/gallery/outdoor-5.jpg" alt="Food and drinks outdoors" loading="lazy">
+  </figure>
+
+  <figure class="galleryItem">
+    <img src="images/gallery/outdoor-6.jpg" alt="Night atmosphere at Rewind" loading="lazy">
+  </figure>
+</div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT + MAP -->
+  <section id="contact" class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <h2>Find Us</h2>
+        <p>41 Messina St, Saaiplaas, Virginia, 9430 • Call/WhatsApp: 071 499 1706</p>
+      </div>
+
+      <div class="contactGrid">
+        <div class="contactCard">
+          <h3>Contact</h3>
+
+          <div class="contactRow">
+            <span class="contactLabel">Phone & WhatsApp</span>
+            <span class="contactValue"><strong>071 499 1706</strong></span>
+          </div>
+
+          <div class="contactRow">
+            <span class="contactLabel">Address</span>
+            <span class="contactValue">41 Messina St, Saaiplaas, Virginia, 9430</span>
+          </div>
+
+          <div class="contactRow">
+            <span class="contactLabel">Hours</span>
+            <span class="contactValue">
+              Mon–Thu: 10:00–22:00<br/>
+              Fri–Sun: 10:00–00:00
+            </span>
+          </div>
+
+          <div class="contactActions">
+            <a class="btn btn--primary" id="callBtn2" href="#">Call Now</a>
+            <a class="btn btn--soft" id="whatsBtn" href="#" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn--ghost" id="directionsBtn2" href="#" target="_blank" rel="noopener">Directions</a>
+          </div>
+
+          <div class="note">
+            <strong>Braai pickup:</strong> call, give your name + the meat you want, then collect when it’s ready.
+          </div>
+        </div>
+
+        <div class="mapCard">
+          <div class="mapFrame">
+            <iframe
+              title="Rewind Pub & Grub Map"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=41%20Messina%20St,%20Saaiplaas,%20Virginia,%209430&output=embed">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <div class="footer__brand">Rewind Pub &amp; Grub</div>
+        <div class="footer__muted">Outdoor Pub • Grill • Lounge • Old-School Nights</div>
+      </div>
+
+      <div class="footer__links">
+        <a href="#menu">Menu</a>
+        <a href="#events">Events</a>
+        <a href="#gallery">Gallery</a>
+      </div>
+
+      <div class="footer__actions">
+        <a class="btn btn--soft" id="whatsBtnFooter" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn--primary" id="callBtnFooter" href="#">Call</a>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> Rewind Pub &amp; Grub</span>
+      <span class="footer__muted">41 Messina St, Saaiplaas, Virginia, 9430</span>
+    </div>
+  </footer>
+
+  <!-- Sticky Action Bar -->
+  <div class="stickyBar" role="navigation" aria-label="Quick actions">
+    <a class="stickyBtn" id="stickyCall" href="#">Call</a>
+    <a class="stickyBtn" id="stickyWhats" href="#" target="_blank" rel="noopener">WhatsApp</a>
+    <a class="stickyBtn" id="stickyDir" href="#" target="_blank" rel="noopener">Directions</a>
+    <button class="stickyBtn stickyBtn--gold" data-open-booking>Book</button>
+  </div>
+
+  <!-- Booking Modal -->
+  <div class="modal" data-modal aria-hidden="true">
+    <div class="modal__overlay" data-close-modal></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
+      <div class="modal__head">
+        <h3 id="bookingTitle">Book a Table</h3>
+        <button class="iconBtn" aria-label="Close booking form" data-close-modal>✕</button>
+      </div>
+
+      <form class="form" id="bookingForm">
+        <div class="formRow">
+          <label>
+            Date
+            <input type="date" name="date" required />
+          </label>
+          <label>
+            Time
+            <input type="time" name="time" required />
+          </label>
+        </div>
+
+        <div class="formRow">
+          <label>
+            Party size
+            <select name="partySize" required>
+              <option value="" selected disabled>Select</option>
+              <option>1</option><option>2</option><option>3</option><option>4</option>
+              <option>5</option><option>6</option><option>7</option><option>8+</option>
+            </select>
+          </label>
+          <label>
+            Seating
+            <select name="seating" required>
+              <option value="Outdoor" selected>Outdoor</option>
+              <option value="Lounge">Lounge</option>
+              <option value="No preference">No preference</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          Full name
+          <input type="text" name="name" placeholder="e.g., Tumelo Letsholo" required />
+        </label>
+
+        <div class="formRow">
+          <label>
+            Phone number
+            <input type="tel" name="phone" placeholder="e.g., 071 499 1706" required />
+          </label>
+          <label>
+            Preferred contact
+            <select name="contactMethod" required>
+              <option value="WhatsApp" selected>WhatsApp</option>
+              <option value="Call">Call</option>
+              <option value="SMS">SMS</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          Notes (optional)
+          <textarea name="notes" rows="3" placeholder="Birthday? Table near music? Allergies?"></textarea>
+        </label>
+
+        <div class="formActions">
+          <button class="btn btn--primary" type="submit">Request Booking</button>
+          <button class="btn btn--ghost" type="button" data-close-modal>Cancel</button>
+        </div>
+
+        <p class="formHint">
+          Submitting will send your request to our booking system. You’ll receive a confirmation shortly.
+        </p>
+
+        <div class="formStatus" id="formStatus" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
