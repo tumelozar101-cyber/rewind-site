@@ -434,14 +434,17 @@ a{ color: inherit; text-decoration: none; }
   gap: 12px;
   margin-top: 18px;
 }
+
 .galleryItem{
   margin: 0;
-  height: 190px;
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid rgba(21,18,14,.12);
   background: rgba(255,255,255,.75);
   box-shadow: 0 18px 36px rgba(0,0,0,.06);
+
+  aspect-ratio: 4 / 3;   /* ✅ same as menu section */
+  height: auto;          /* ✅ remove fixed height */
   transform: translateY(0);
   transition: transform .18s ease, box-shadow .18s ease;
 }
@@ -455,7 +458,7 @@ a{ color: inherit; text-decoration: none; }
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover;
+  object-fit: cover;     /* ✅ same behavior as menu */
 }
 
 .footer{
@@ -712,4 +715,77 @@ a{ color: inherit; text-decoration: none; }
   .contactGrid{ grid-template-columns: 1fr; }
   .mapFrame{ height: 320px; }
   .contactRow{ grid-template-columns: 1fr; }
+}
+
+/* Menu image strip */
+.menuGallery{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.menuItem{
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(21,18,14,.12);
+  background: rgba(255,255,255,.75);
+  box-shadow: 0 18px 36px rgba(0,0,0,.06);
+  aspect-ratio: 4 / 3;
+  transform: translateY(0);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.menuItem:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 24px 46px rgba(0,0,0,.10);
+}
+
+.menuItem img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 900px){
+  .menuGallery{ grid-template-columns: 1fr; }
+}
+
+/* Menu card + image pairing */
+.menuFeatures{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.menuFeature{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.menuItem{
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(21,18,14,.12);
+  background: rgba(255,255,255,.75);
+  box-shadow: 0 18px 36px rgba(0,0,0,.06);
+  aspect-ratio: 4 / 3;
+}
+
+.menuItem img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 900px){
+  .menuFeatures{
+    grid-template-columns: 1fr; /* card then photo, repeat */
+  }
 }
